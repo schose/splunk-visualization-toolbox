@@ -4,6 +4,7 @@
   <view name="sample" default="true"  />
   <collection label="Tutorial">
     <view name="tutorial_1" />
+    <view name="tutorial_2" />
   </collection>
   
 </nav>
