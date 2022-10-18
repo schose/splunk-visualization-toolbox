@@ -160,7 +160,7 @@ option = {
 <p>to map the data of the 3nd column (index value 2) to the xAxis and the data of the 2nd column (index value 1) to the series data. <br />
 <b>Third</b>, we remove the data: [] parameters from xAxis{} and series{} in the option.</p>
 
-<h1>what visualization toolbox does different</h1>
+<h1>what visualization toolbox does differently</h1>
 
 As you have seen the paramters for mapping in data are very dynamic. This is different from other visualizations you might have used from Splunkbase.
 Those visualizations force you to format the data and name the column in a specific way. This is not the case with the visualization toolbox. 
