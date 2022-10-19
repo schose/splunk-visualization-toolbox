@@ -4,6 +4,13 @@
     <panel>
       <html>
         <p>
+          <b>Question: I'm getting confused with these new terms like toolbox, tooltip, dataZoom, series.. Where is a good starting point.</b>
+        </p>
+        <p>
+          Answer: Check out the <a href="https://echarts.apache.org/en/cheat-sheet.html" target="_blank">ECharts Cheat Sheet</a>. It's a great starting point to get familiar with the terms.
+        </p>
+        <hr />
+        <p>
           <b>Question: The visualization failes loading and prints out "Error rendering Visualization Toolbox visualization"</b>
         </p>
         <p>
