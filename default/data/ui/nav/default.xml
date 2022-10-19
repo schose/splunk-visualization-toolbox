@@ -5,6 +5,7 @@
   <collection label="Docs / Tutorial">
     <view name="tutorial_1" />
     <view name="tutorial_2" />
+    <view name="tutorial_3" />
     <view name="faq" />
 
   </collection>
