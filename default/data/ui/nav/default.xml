@@ -2,9 +2,11 @@
   <view name="search"/>
   <view name="dashboards" />
   <view name="sample" default="true"  />
-  <collection label="Tutorial">
+  <collection label="Docs / Tutorial">
     <view name="tutorial_1" />
     <view name="tutorial_2" />
+    <view name="faq" />
+
   </collection>
   
 </nav>

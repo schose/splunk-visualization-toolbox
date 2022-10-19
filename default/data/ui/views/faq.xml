@@ -1,0 +1,39 @@
+<dashboard  version="1.1" stylesheet="tutorial.css">
+  <label>FAQ</label>
+  <row>
+    <panel>
+      <html>
+        <p>
+          <b>Question: Does visualization toolkit support Dashboard Studio?</b>
+        </p>
+        <p>
+          Answer: As Dashboard Studio does no support custom visualizations, the visualization toolkit is not supported in Dashboard Studio.
+        </p>
+        <hr />
+        <p>
+          <b>Question: Does visualization toolkit support Splunk Mobile?</b>
+        </p>
+        <p>
+          Answer: As Splunk Mobile app does no support custom visualizations, the visualization toolkit is not supported using Splunk Mobile.
+        </p>
+        <hr />
+        <p>
+          <b>Question: The visualization failes loading and prints out "Error rendering Visualization Toolbox visualization"</b>
+        </p>
+        <p>
+          Answer: We suggest the following steps to solve this issue: First copy your options code to <a href="https://echarts.apache.org/examples/en/editor.html" target="_blank">echarts example page (IDE)</a> to check if there is an sytax error in your options.
+          Second, check the data mapping: seriesDataIndexBinding, xAxisDataIndexBinding. 
+        </p>
+        <hr />
+        <p>
+          <b>Question: I want to use visualization toolkit within my own business critial app. Do you have support offerings?</b>
+        </p>
+        <p>
+          Answer: Generally speaking the app is free to use. You can connect to us using the github issue tracker. We will try to answer your questions as soon as possible.
+          If this is not enough for you, we offer paid support, consulting and training for the app. Please contact us via email: XXX . 
+        </p>
+
+    </html>
+</panel>
+</row>
+</dashboard>
