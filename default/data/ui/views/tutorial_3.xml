@@ -1,12 +1,12 @@
 <dashboard  version="1.1" stylesheet="tutorial.css">
-  <label>3. advanced vizualizations examples</label>
+  <label>3. Advanced vizualizations examples</label>
   <row>
     <panel>
       <html>
   
-          <h1>multiple Y axis</h1>
+          <h1>Multiple Y axis</h1>
           <p>
-            just define multiple yAxis, use series for the values and configure "xAxisDataIndexBinding" and "seriesDataIndexBinding" to map the data.
+            Just define multiple yAxis, use series for the values and configure "xAxisDataIndexBinding" and "seriesDataIndexBinding" to map the data.
           </p>
 </html>
 
@@ -116,10 +116,10 @@ option = {
 
 <html>
 
-<h1>data slider</h1>
+<h1>Data slider</h1>
 
-Sometime you want to display a lot of data, but you don't want to display all of them at the same time. You can use the data slider to display only a part of the data.
-We used the following code for this
+Sometimes you want to display a lot of data, but you don't want to display all of them at the same time. You can use the data slider to display only a part of the data.
+We used the following code for this:
 <pre><code><![CDATA[  dataZoom: [
     {
       type: 'slider',
@@ -135,7 +135,7 @@ We used the following code for this
   ],
 ]]></code></pre>
 
-Note that the first configuration is for the slider on the button, the second one is for the inside zoom. You can use both at the same time. See more options in the <a href="https://echarts.apache.org/en/option.html#dataZoom">ECharts
+Note that the first configuration is for the slider on the bottom. The second one is used to zoom into the data points when using the mousewheel. See more options in the <a href="https://echarts.apache.org/en/option.html#dataZoom">ECharts
 documentation</a>. 
 
 </html>
