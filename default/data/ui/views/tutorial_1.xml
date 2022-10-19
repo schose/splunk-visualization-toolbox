@@ -82,10 +82,6 @@
   <p>this should show you your first visualization link in the panel below</p>
 
       </html>
-    </panel>
-    </row>
-    <row>
-    <panel>
 <viz type="visualization_toolbox.hman">
     <search>
       <query>| makeresults</query>
@@ -110,10 +106,7 @@
     <option name="height">300</option>
     <option name="refresh.display">progressbar</option>
 </viz>
-    </panel>
-  </row>
-  <row>
-  <panel>
+
   <html>
     <h1>customize you Chart</h1>
     <p>
@@ -204,10 +197,6 @@ You can also check the sourcecode of this tutorial page. Checkout the chart belo
 You can also export the chart as an image by clicking on the save icon in the toolbox. Cool, right?!
     </html>
 
-  </panel>
-  </row>
-  <row>
-  <panel>
 <viz type="visualization_toolbox.hman">
     <search>
       <query>| makeresults</query>

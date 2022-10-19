@@ -5,7 +5,7 @@
       <html>
         <p>
           In the first tutorial you created your first ECharts visualization in Splunk. The data for the visualisation was part of the option parameter and static. <br />
-          Now we want to map out Splunk data into the visualisation.
+          Now we want to map Splunk data into the visualisation.
         </p>
 
         <hr />
@@ -36,14 +36,10 @@
     
     <p>You will see a resulttable with 7 rows and 3 columns. The first column is the timestamp, the second column is the count and the third column is the day of the week. 
     <br/>
-    now we take the example of the previos tutorial and add the options for data binding
+    now we take the example of the previous tutorial and add the options for data binding
     </p>
 
     </html>      
-    </panel>
-    </row>
-<row>
-<panel>
 <viz type="visualization_toolbox.hman">
     <search>
       <query>| makeresults count=7 
@@ -90,10 +86,6 @@ option = {
     <option name="visualization_toolbox.hman.xAxisDataIndexBinding">2</option>
     <option name="refresh.display">progressbar</option>
 </viz>
-</panel>
-</row>
-<row>
-<panel>
 <html>
 <p> full viz source: </p>
 <pre><code><![CDATA[<viz type="visualization_toolbox.hman">
@@ -159,6 +151,103 @@ option = {
 ]]></code></pre> 
 <p>to map the data of the 3nd column (index value 2) to the xAxis and the data of the 2nd column (index value 1) to the series data. <br />
 <b>Third</b>, we remove the data: [] parameters from xAxis{} and series{} in the option.</p>
+
+
+<h1>map more series data</h1>
+
+Now we to use multiple columns in the visualisation. For that we have to map it to the series data. <br />
+first we adjust the splunk search to output more columns:
+
+<pre><code><![CDATA[| makeresults count=7 
+| streamstats count as count 
+| eval _time = _time - (count*86400) 
+| eval myday = strftime(_time, "%A")
+| eval count1 = count + 1, count2 = count1 + 1
+]]></code></pre> 
+
+in the next step we add more dataseries to the options:
+
+<pre><code><![CDATA[series: [
+    {
+      type: 'bar',
+      color: "green"
+    },
+    {
+      type: 'line',
+      color: "red"
+    },
+    {
+      type: 'bar',
+      color: "blue"
+    }
+  ]
+]]></code></pre>
+
+<p>As last step we adjust the options xAxisDataIndexBinding to use the 5th column (indexvalue: 4) as the xAxis. We set seriesDataIndexBinding to "1,2,3" meaning
+the 2nd column is mapped to the first series, 3rd to the seconds series and 4th column to the 3rd series.</p>
+
+<img src="/static/app/visualization_toolbox/docs/tutorial_2_mapping-1.png" />
+
+</html>
+
+<viz type="visualization_toolbox.hman">
+    <search>
+      <query>| makeresults count=7 
+| streamstats count as count 
+| eval _time = _time - (count*86400) 
+| eval myday = strftime(_time, "%A")
+| eval count1 = count + 1, count2 = count1 + 1
+</query>
+    </search>
+    <option name="visualization_toolbox.hman.dataType">Custom</option>
+    <option name="visualization_toolbox.hman.option">
+option = {
+  toolbox: {
+    show: true,
+    feature: {
+      magicType: {
+        type: ["line", "bar"]
+      },
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    name: 'day of week'
+  },
+  yAxis: {
+    type: 'value',
+    name: 'pieces'
+  },
+  title: {
+    text: "map multiple columns",
+    left: "center",
+    textStyle: {
+      fontSize: 12
+    },
+  },
+  series: [
+    {
+      type: 'bar',
+      color: "green"
+    },
+    {
+      type: 'line',
+      color: "red"
+    },
+    {
+      type: 'bar',
+      color: "blue"
+    }
+  ]
+};
+    </option>
+    <option name="height">300</option>
+    <option name="visualization_toolbox.hman.seriesDataIndexBinding">1,2,3</option>
+    <option name="visualization_toolbox.hman.xAxisDataIndexBinding">4</option>
+    <option name="refresh.display">progressbar</option>
+</viz>
+<html>
 
 <h1>what visualization toolbox does differently</h1>
 

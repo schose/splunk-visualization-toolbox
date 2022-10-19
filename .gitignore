@@ -105,3 +105,6 @@ dist
 
 # macos stuff
 .DS_Store
+
+# drawio backup files
+*.drawio.bkp
